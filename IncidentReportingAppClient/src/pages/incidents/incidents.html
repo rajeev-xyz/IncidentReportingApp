@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Incident list
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+  <ion-row *ngFor="let Feedback of Feedbacks">
+    <ion-col col-9>
+      <button ion-item (click)="showIncidentDetails(Feedback)" [ngClass]="{'completedIncident' : Feedback.Status == 'Complete'}">
+        {{Feedback.Description}}
+      </button>
+    </ion-col>
+    <ion-col col-3>
+      <ion-item>{{Feedback.Status}}</ion-item>
+    </ion-col>
+  </ion-row>
+</ion-list>
+</ion-content>
